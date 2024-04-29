@@ -4,8 +4,19 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import logo from "../imgs/logo.jpg"
-
-export const NavBar = ({ search }) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { searchMovies } from "./Redux/Actions/GetAllMovies";
+import GetAllMovies from "./Redux/Actions/GetAllMovies";
+export const NavBar = () => {
+    const dispatch = useDispatch()
+    const moviesSearch = useSelector(state => state.Movies)
+    const search = async (word) => {
+        if (word != "") {
+            dispatch(searchMovies(word))
+        } else {
+            dispatch(GetAllMovies())
+        }
+    }
     const onsearch = (word) => {
         search(word)
     }

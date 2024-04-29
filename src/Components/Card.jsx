@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
-
+import { useDispatch } from 'react-redux';
+import GetAllMovies from './Redux/Actions/GetAllMovies';
+import { useEffect } from 'react';
 
 export const Card = ({ movie }) => {
     return (
