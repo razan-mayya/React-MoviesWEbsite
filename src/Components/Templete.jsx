@@ -25,7 +25,7 @@ export const Templete = () => {
                     )
 
                 })) : <h4>لا يوحد افلام</h4>}
-                <PaginationCom setMovies={setMovies} />
+                <PaginationCom />
 
             </Row>
         </Container>
